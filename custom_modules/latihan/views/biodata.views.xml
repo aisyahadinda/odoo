@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-       
-              <!-- Form View -->
+        <!-- Form View -->
         <record id="latihan_biodata_form" model="ir.ui.view">
             <field name="name">latihan.biodata.form</field>
             <field name="model">latihan.biodata</field>
@@ -17,7 +16,9 @@
                             <field name="children" string="Anak ke-"/>
                             <field name="photo" string="Foto" widget="image" class="oe_avatar"/>
                             <field name="gender" string="Jenis Kelamin"/>
-                             <field name="education_sd" string="SD"/>
+                        </group>
+                        <group string="Pendidikan">
+                            <field name="education_sd" string="SD"/>
                             <field name="education_smp" string="SMP"/>
                             <field name="education_sltp" string="SLTP"/>
                             <field name="education_sma" string="SMA"/>
@@ -44,24 +45,23 @@
                     <field name="children" string="Anak ke-" optional="show"/>
                     <field name="photo" string="Foto" widget="image" class="oe_avatar"/>
                     <field name="gender" string="Jenis Kelamin" optional="show"/>
-                     <field name="education_sd" string="SD"/>
-                            <field name="education_smp" string="SMP"/>
-                            <field name="education_sltp" string="SLTP"/>
-                            <field name="education_sma" string="SMA"/>
-                            <field name="education_smk" string="SMK"/>
-                            <field name="education_smu" string="SMU"/>
-                            <field name="education_slta" string="SLTA"/>
-                            <field name="education_kuliah" string="Kuliah"/>
+                    <field name="education_sd" string="SD"/>
+                    <field name="education_smp" string="SMP"/>
+                    <field name="education_sltp" string="SLTP"/>
+                    <field name="education_sma" string="SMA"/>
+                    <field name="education_smk" string="SMK"/>
+                    <field name="education_smu" string="SMU"/>
+                    <field name="education_slta" string="SLTA"/>
+                    <field name="education_kuliah" string="Kuliah"/>
                 </tree>
             </field>
         </record>
 
-          <!-- Action -->
+        <!-- Action -->
         <record id="latihan_biodata_action" model="ir.actions.act_window">
             <field name="name">Biodata</field>
             <field name="res_model">latihan.biodata</field>
             <field name="view_mode">tree,form</field>
         </record>
-
     </data>
 </odoo>
