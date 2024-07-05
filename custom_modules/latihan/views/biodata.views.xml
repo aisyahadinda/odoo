@@ -17,7 +17,14 @@
                             <field name="children" string="Anak ke-"/>
                             <field name="photo" string="Foto" widget="image" class="oe_avatar"/>
                             <field name="gender" string="Jenis Kelamin"/>
-                            <field name="education" string="Pendidikan"/>
+                             <field name="education_sd" string="SD"/>
+                            <field name="education_smp" string="SMP"/>
+                            <field name="education_sltp" string="SLTP"/>
+                            <field name="education_sma" string="SMA"/>
+                            <field name="education_smk" string="SMK"/>
+                            <field name="education_smu" string="SMU"/>
+                            <field name="education_slta" string="SLTA"/>
+                            <field name="education_kuliah" string="Kuliah"/>
                         </group>
                     </sheet>
                 </form>
@@ -37,7 +44,14 @@
                     <field name="children" string="Anak ke-" optional="show"/>
                     <field name="photo" string="Foto" widget="image" class="oe_avatar"/>
                     <field name="gender" string="Jenis Kelamin" optional="show"/>
-                    <field name="education" string="Pendidikan" optional="show"/>
+                     <field name="education_sd" string="SD"/>
+                            <field name="education_smp" string="SMP"/>
+                            <field name="education_sltp" string="SLTP"/>
+                            <field name="education_sma" string="SMA"/>
+                            <field name="education_smk" string="SMK"/>
+                            <field name="education_smu" string="SMU"/>
+                            <field name="education_slta" string="SLTA"/>
+                            <field name="education_kuliah" string="Kuliah"/>
                 </tree>
             </field>
         </record>
