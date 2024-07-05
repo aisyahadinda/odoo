@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       
+              <!-- Form View -->
+        <record id="latihan_biodata_form" model="ir.ui.view">
+            <field name="name">latihan.biodata.form</field>
+            <field name="model">latihan.biodata</field>
+            <field name="arch" type="xml">
+                <form string="Biodata">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Nama"/>
+                            <field name="fullname" string="Nama Lengkap"/>
+                            <field name="birth_date" string="Tanggal Lahir"/>
+                            <field name="age" string="Umur"/>
+                            <field name="children" string="Anak ke-"/>
+                            <field name="photo" string="Foto" widget="image" class="oe_avatar"/>
+                            <field name="gender" string="Jenis Kelamin"/>
+                            <field name="education" string="Pendidikan"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="latihan_biodata_tree" model="ir.ui.view">
+            <field name="name">latihan.biodata.tree</field>
+            <field name="model">latihan.biodata</field>
+            <field name="arch" type="xml">
+                <tree string="Biodata">
+                    <field name="name" string="Nama" optional="show"/>
+                    <field name="fullname" string="Nama Lengkap" optional="show"/>
+                    <field name="birth_date" string="Tanggal Lahir" optional="show"/>
+                    <field name="age" string="Umur" optional="show"/>
+                    <field name="children" string="Anak ke-" optional="show"/>
+                    <field name="photo" string="Foto" widget="image" class="oe_avatar"/>
+                    <field name="gender" string="Jenis Kelamin" optional="show"/>
+                    <field name="education" string="Pendidikan" optional="show"/>
+                </tree>
+            </field>
+        </record>
+
+          <!-- Action -->
+        <record id="latihan_biodata_action" model="ir.actions.act_window">
+            <field name="name">Biodata</field>
+            <field name="res_model">latihan.biodata</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>
