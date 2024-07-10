@@ -1,0 +1,72 @@
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record id="latihan_biodata_form" model="ir.ui.view">
+            <field name="name">latihan.biodata.form</field>
+            <field name="model">latihan.biodata</field>
+            <field name="arch" type="xml">
+                <form string="Biodata">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Nama"/>
+                            <field name="fullname" string="Nama Lengkap"/>
+                            <field name="birth_date" string="Tanggal Lahir"/>
+                            <field name="age" string="Umur"/>
+                            <field name="children" string="Anak"/>
+                            <field name="photo" string="Foto" widget="image" class="oe_avatar"/>
+                            <field name="gender" string="Jenis Kelamin"/>
+                            <field name="religion" string="Agama"/>
+                        </group>
+                        <group string="Pendidikan">
+                            <field name="education_sd" string="SD"/>
+                            <field name="education_smp" string="SMP"/>
+                            <field name="education_sltp" string="SLTP"/>
+                            <field name="education_sma" string="SMA"/>
+                            <field name="education_smk" string="SMK"/>
+                            <field name="education_smu" string="SMU"/>
+                            <field name="education_slta" string="SLTA"/>
+                            <field name="education_kuliah" string="Kuliah"/>
+                        </group>
+                        <footer>
+                            <button string="Hitung Umur" type="object" name="calculate_age" class="oe_highlight"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+ 
+
+        <!-- Tree View -->
+        <record id="latihan_biodata_tree" model="ir.ui.view">
+            <field name="name">latihan.biodata.tree</field>
+            <field name="model">latihan.biodata</field>
+            <field name="arch" type="xml">
+                <tree string="Biodata">
+                    <field name="name" string="Nama" optional="show"/>
+                    <field name="fullname" string="Nama Lengkap" optional="show"/>
+                    <field name="birth_date" string="Tanggal Lahir" optional="show"/>
+                    <field name="age" string="Umur" optional="show"/>
+                    <field name="children" string="Anak" optional="show"/>
+                    <field name="photo" string="Foto" widget="image" class="oe_avatar"/>
+                    <field name="gender" string="Jenis Kelamin" optional="show"/>
+                    <field name="religion" string="Agama" optional="show"/> 
+                    <field name="education_sd" string="SD" optional="show"/>
+                    <field name="education_smp" string="SMP" optional="show"/>
+                    <field name="education_sltp" string="SLTP" optional="show"/>
+                    <field name="education_sma" string="SMA" optional="show"/>
+                    <field name="education_smk" string="SMK" optional="show"/>
+                    <field name="education_smu" string="SMU" optional="show"/>
+                    <field name="education_slta" string="SLTA" optional="show"/>
+                    <field name="education_kuliah" string="Kuliah" optional="show"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="latihan_biodata_action" model="ir.actions.act_window">
+            <field name="name">Biodata</field>
+            <field name="res_model">latihan.biodata</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>
