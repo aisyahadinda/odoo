@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record id="latihan_birthcity_form" model="ir.ui.view">
+            <field name="name">latihan.birthcity.form</field>
+            <field name="model">latihan.birthcity</field>
+            <field name="arch" type="xml">
+                <form string="Kota Lahir">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Nama Kota"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <!-- Tree View -->
+        <record id="latihan_birthcity_tree" model="ir.ui.view">
+            <field name="name">latihan.birthcity.tree</field>
+            <field name="model">latihan.birthcity</field>
+            <field name="arch" type="xml">
+                <tree string="Kota Lahir">
+                    <field name="name" string="Nama Kota"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Action -->
+        <record id="latihan_birthcity_action" model="ir.actions.act_window">
+            <field name="name">Kota Lahir</field>
+            <field name="res_model">latihan.birthcity</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <!-- Menu Item -->
+        <menuitem id="latihan_birthcity_menu" name="Kota Lahir" parent="biodata_root" action="latihan_birthcity_action"/>
+    </data>
+</odoo>

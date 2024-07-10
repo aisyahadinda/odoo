@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record id="education_form_view" model="ir.ui.view">
+            <field name="name">education.form</field>
+            <field name="model">latihan.education</field>
+            <field name="arch" type="xml">
+                <form string="Form Pendidikan">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="education_tree_view" model="ir.ui.view">
+            <field name="name">education.tree</field>
+            <field name="model">latihan.education</field>
+            <field name="arch" type="xml">
+                <tree string="Daftar Pendidikan">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Menuitem -->
+        <menuitem id="education_menu" name="Pendidikan" parent="biodata_root" sequence="10"/>
+        
+        <!-- Action -->
+        <record id="education_action" model="ir.actions.act_window">
+            <field name="name">Pendidikan</field>
+            <field name="res_model">latihan.education</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

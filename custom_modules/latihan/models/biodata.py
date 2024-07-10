@@ -8,6 +8,7 @@ class Biodata(models.Model):
     fullname = fields.Char(string="Nama Lengkap")
     birth_date = fields.Date(string="Tanggal Lahir")
     age = fields.Integer(string="Umur", compute='_compute_age', store=True)
+    birth_city = fields.Many2one('latihan.birthcity', string="Kota Lahir")    
     children = fields.Integer(string="Anak")
     photo = fields.Image(string="Foto")
     gender = fields.Selection(
@@ -25,14 +26,14 @@ class Biodata(models.Model):
         ],
         string="Agama"
     ) 
-    education_sd = fields.Boolean(string="SD")
-    education_smp = fields.Boolean(string="SMP")
-    education_sltp = fields.Boolean(string="SLTP")
-    education_sma = fields.Boolean(string="SMA")
-    education_smk = fields.Boolean(string="SMK")
-    education_smu = fields.Boolean(string="SMU")
-    education_slta = fields.Boolean(string="SLTA")
-    education_kuliah = fields.Boolean(string="Kuliah")
+
+    address_ids = fields.One2many('latihan.address', 'biodata_id', string="Alamat")
+    
+    education_ids = fields.Many2many(
+        'latihan.education',
+        string='Pendidikan',
+        help='Pilih pendidikan yang pernah ditempuh',
+    )
     
     @api.depends('birth_date')
     def _compute_age(self):

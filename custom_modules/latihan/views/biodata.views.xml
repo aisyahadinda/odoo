@@ -16,16 +16,24 @@
                             <field name="photo" string="Foto" widget="image" class="oe_avatar"/>
                             <field name="gender" string="Jenis Kelamin"/>
                             <field name="religion" string="Agama"/>
+                            <field name="birth_city" string="Kota Lahir"/>
+                        </group>
+                        <group string="Alamat">
+                            <field name="address_ids">
+                                <tree string="Alamat">
+                                    <field name="street" string="Jalan"/>
+                                    <field name="city" string="Kota"/>
+                                    <field name="state" string="Provinsi"/>
+                                    <field name="zip" string="Kode Pos"/>
+                                    <field name="country_id" string="Negara"/>
+                                </tree>
+                            </field>
                         </group>
                         <group string="Pendidikan">
-                            <field name="education_sd" string="SD"/>
-                            <field name="education_smp" string="SMP"/>
-                            <field name="education_sltp" string="SLTP"/>
-                            <field name="education_sma" string="SMA"/>
-                            <field name="education_smk" string="SMK"/>
-                            <field name="education_smu" string="SMU"/>
-                            <field name="education_slta" string="SLTA"/>
-                            <field name="education_kuliah" string="Kuliah"/>
+                            <label for="education_ids"/>
+                            <div>
+                                <field name="education_ids" widget="many2many_tags"/>
+                            </div>
                         </group>
                         <footer>
                             <button string="Hitung Umur" type="object" name="calculate_age" class="oe_highlight"/>
@@ -35,7 +43,6 @@
             </field>
         </record>
  
-
         <!-- Tree View -->
         <record id="latihan_biodata_tree" model="ir.ui.view">
             <field name="name">latihan.biodata.tree</field>
@@ -50,14 +57,17 @@
                     <field name="photo" string="Foto" widget="image" class="oe_avatar"/>
                     <field name="gender" string="Jenis Kelamin" optional="show"/>
                     <field name="religion" string="Agama" optional="show"/> 
-                    <field name="education_sd" string="SD" optional="show"/>
-                    <field name="education_smp" string="SMP" optional="show"/>
-                    <field name="education_sltp" string="SLTP" optional="show"/>
-                    <field name="education_sma" string="SMA" optional="show"/>
-                    <field name="education_smk" string="SMK" optional="show"/>
-                    <field name="education_smu" string="SMU" optional="show"/>
-                    <field name="education_slta" string="SLTA" optional="show"/>
-                    <field name="education_kuliah" string="Kuliah" optional="show"/>
+                    <field name="birth_city" string="Kota Lahir" optional="show"/>
+                    <field name="address_ids" string="Alamat" optional="show">
+                        <tree>
+                            <field name="street" string="Jalan"/>
+                            <field name="city" string="Kota"/>
+                            <field name="state" string="Provinsi"/>
+                            <field name="zip" string="Kode Pos"/>
+                            <field name="country_id" string="Negara"/>
+                        </tree>
+                    </field>
+                    <field name="education_ids" widget="many2many_tags" string="Pendidikan"/>
                 </tree>
             </field>
         </record>
